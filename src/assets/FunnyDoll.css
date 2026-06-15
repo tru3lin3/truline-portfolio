@@ -1,0 +1,15 @@
+.hopping-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 3rem;
+}
+
+.mascot {
+  animation: hop 1.5s infinite ease-in-out;
+}
+
+@keyframes hop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
