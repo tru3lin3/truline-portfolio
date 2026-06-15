@@ -18,7 +18,7 @@ const Projects = () => {
           title="JILOCK"
           tech="Flutter / Firebase"
           description="A productivity and accountability application designed to help users stay committed to their objectives. Features include streak tracking, motivational quote integration, and real-time verification systems."
-          link="#"
+          
         />
 
         <ProjectCard 

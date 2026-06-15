@@ -11,13 +11,8 @@ const ProjectCard = ({ title, description, tech, image, link }) => {
       gap: '1.5rem',
       transition: 'all 0.3s ease'
     }}>
-      {/* 
-        CHANGED: 
-        1. objectFit: 'contain' ensures the WHOLE image is visible.
-        2. backgroundColor: '#000' fills the empty space if the image ratio doesn't match.
-      */}
-      <div style={{ 
-        height: '400px', // Increased height slightly
+     <div style={{ 
+        height: '400px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -30,7 +25,7 @@ const ProjectCard = ({ title, description, tech, image, link }) => {
           style={{ 
             width: '100%', 
             height: '100%', 
-            objectFit: 'contain' // This shows the whole image
+            objectFit: 'contain'
           }} 
         />
       </div>
