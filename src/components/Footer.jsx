@@ -18,7 +18,7 @@ const Footer = () => {
           Let's talk
         </p>
         <a 
-          href="mailto:mkhaghulitruline@gmail.com" 
+          href="mailto:mkhagulitruline@gmail.com" 
           style={{ 
             color: 'var(--accent-red)', 
             fontSize: 'clamp(1.5rem, 4vw, 2.5rem)', 
@@ -26,7 +26,7 @@ const Footer = () => {
             fontWeight: '800'
           }}
         >
-          mkhaghulitruline@gmail.com
+          mkhagulitruline@gmail.com
         </a>
        <p style={{ color: '#f4efef', marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '0.8rem' }}>
           Call: +254 706 193 309
