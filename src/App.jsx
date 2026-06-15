@@ -8,15 +8,16 @@ import FunnyDoll from './components/FunnyDoll';
 
 function App() {
   return (
-    <main>
+    <div style={{ 
+      maxWidth: '100vw', 
+      overflowX: 'hidden'
+    }}>
       <Navbar />
       <Hero />
       <div id="about"><About /></div>
       <Projects />
       <div id="contact"><Footer /></div>
       <FunnyDoll />
-    </main>
+    </div>
   );
 }
-
-export default App;

@@ -1,32 +1,33 @@
 import React from 'react';
-import ProjectCard from './Project';
-// Updated imports to match your new filenames in src/assets/
-import jilockImg from '../assets/JiLock.jpg'; 
-import alphaImg from '../assets/Alphawrights.png';
+import ProjectCard from './ProjectCard';
 
 const Projects = () => {
   return (
     <section id="projects" style={{ padding: '4rem 2rem' }}>
-      <h2 style={{ fontSize: '3rem', marginBottom: '3rem', textTransform: 'uppercase', color: 'white' }}>
-        Selected Work
-      </h2>
+      <h2 style={{ fontSize: '3rem', marginBottom: '3rem', color: 'white' }}>SELECTED WORK</h2>
       
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+      {/* The grid layout here handles responsiveness: it stacks on small screens */}
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+        gap: '2rem' 
+      }}>
         
         <ProjectCard 
-          image={jilockImg}
+          image="/JiLock.jpg"
           title="JILOCK"
           tech="Flutter / Firebase"
-          description="A productivity and accountability application designed to help users stay committed to their objectives. Features include streak tracking, motivational quote integration, and real-time verification systems."
-          
+          description="A task verification and productivity tool. Currently in its final development stages."
+          isLive={false}
         />
 
         <ProjectCard 
-          image={alphaImg}
+          image="/Alphawrights.png"
           title="ALPHAWRIGHTS"
-          tech="React / TypeScript / Tailwind"
-          description="A bespoke digital showcase for custom metal fabrication. I engineered this platform to categorize and display high-end metalworks, ranging from architectural gates and staircases to custom office furniture."
+          tech="React / TypeScript"
+          description="Custom fabrication showcase platform."
           link="https://alphawrightscustomfabricators.pw/"
+          isLive={true}
         />
         
       </div>
