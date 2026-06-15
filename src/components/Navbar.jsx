@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = (
@@ -16,22 +15,26 @@ const Navbar = () => {
 
   return (
     <nav style={navStyle}>
-      <div style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>TRULINE</div>
+      <div style={{ fontWeight: '800', fontSize: '1.5rem', letterSpacing: '2px' }}>TRULINE</div>
 
+      {/* Desktop Menu */}
       <div style={desktopMenu}>{navLinks}</div>
 
+      {/* Hamburger Icon */}
       <div style={hamburgerStyle} onClick={toggleMenu}>
         <div style={barStyle}></div>
         <div style={barStyle}></div>
         <div style={barStyle}></div>
       </div>
 
-      {isOpen && (
-        <div style={mobileMenuStyle}>
-          <button onClick={toggleMenu} style={closeButtonStyle}>✕</button>
-          <div style={mobileLinksContainer}>{navLinks}</div>
-        </div>
-      )}
+      {/* Mobile Drawer (Side Menu) */}
+      <div style={{
+        ...mobileDrawerStyle,
+        transform: isOpen ? 'translateX(0)' : 'translateX(100%)', // Slide in effect
+      }}>
+        <button onClick={toggleMenu} style={closeButtonStyle}>✕</button>
+        <div style={mobileLinksContainer}>{navLinks}</div>
+      </div>
     </nav>
   );
 };
@@ -43,23 +46,24 @@ const navStyle = {
 };
 
 const linkStyle = { color: 'white', textDecoration: 'none', fontSize: '0.9rem', letterSpacing: '1px' };
-
 const desktopMenu = { display: 'flex', gap: '2rem' };
 
-const hamburgerStyle = { 
-  display: 'none', flexDirection: 'column', gap: '5px', cursor: 'pointer' 
+const hamburgerStyle = { display: 'none', flexDirection: 'column', gap: '6px', cursor: 'pointer' };
+const barStyle = { width: '25px', height: '2px', backgroundColor: 'white' };
+
+const mobileDrawerStyle = {
+  position: 'fixed', top: 0, right: 0,
+  width: '80%', height: '100vh',
+  backgroundColor: '#000',
+  borderLeft: '1px solid #333',
+  display: 'flex', flexDirection: 'column',
+  justifyContent: 'center', alignItems: 'center',
+  zIndex: 2000,
+  transition: 'transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000)', // Smooth sliding
+  boxShadow: '-10px 0 30px rgba(0,0,0,0.5)'
 };
 
-const barStyle = { width: '25px', height: '3px', backgroundColor: 'white' };
-
-const mobileMenuStyle = {
-  position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh',
-  backgroundColor: 'black', display: 'flex', flexDirection: 'column',
-  justifyContent: 'center', alignItems: 'center', zIndex: 2000
-};
-
-const mobileLinksContainer = { display: 'flex', flexDirection: 'column', gap: '3rem', fontSize: '2rem' };
-
+const mobileLinksContainer = { display: 'flex', flexDirection: 'column', gap: '3rem', fontSize: '1.5rem' };
 const closeButtonStyle = { position: 'absolute', top: '2rem', right: '2rem', background: 'none', border: 'none', color: 'white', fontSize: '2rem', cursor: 'pointer' };
 
 const styleSheet = document.createElement("style");
